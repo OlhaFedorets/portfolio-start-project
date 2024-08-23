@@ -18,8 +18,8 @@ export const Main = () => {
     );
 };
 
-const StyledMain = styled.div`
-min-height: 100vh;
+const StyledMain = styled.section`
+    min-height: 100vh;
     background-color: antiquewhite;
 `
 
@@ -30,7 +30,7 @@ const Photo = styled.img`
 `
 
 const MainTitle = styled.h1`
-    
+
 `
 
 const Name = styled.h2`
