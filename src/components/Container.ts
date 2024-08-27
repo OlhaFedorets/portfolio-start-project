@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.div`
     max-width: 1170px;
@@ -6,5 +6,5 @@ export const Container = styled.div`
     min-height: 100%;
     padding: 0 15px;
     margin: 0 auto;
-    border: 1px solid red;
+    outline: 1px solid red;
 `
