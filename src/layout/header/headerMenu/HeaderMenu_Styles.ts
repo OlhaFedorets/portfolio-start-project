@@ -1,15 +1,13 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme";
+import {Link} from "react-scroll";
 
 
 // Menu
-const Link = styled.a`
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 30px;
-    font-weight: 400;
-    text-align: center;
-    color: transparent;
+const MenuItem = styled.li`
+    position: relative;   
 `
+
 
 const Mask = styled.span`
     position: absolute;
@@ -18,8 +16,8 @@ const Mask = styled.span`
     display: inline-block;
     height: 50%;
     overflow: hidden;
-    //outline: 1px solid red;
     color: ${theme.colors.accent};
+    ${theme.animations.transition};
 
     & + & {
         top: 50%;
@@ -31,29 +29,35 @@ const Mask = styled.span`
     }
 `
 
-const MenuItem = styled.li`
-    position: relative;
-    
+
+const NavLink = styled(Link)`
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    color: transparent;
+
     &::before {
         content: "";
         display: inline-block;
         height: 3px;
         background-color: ${theme.colors.accent};
-        
+
         position: absolute;
         top: 50%;
         left: -10px;
         right: -10px;
         z-index: 1;
-        
+
         transform: scale(0);
+        transition: ${theme.animations.transition};
     }
 
-    &:hover {
+    &:hover, &.active{
         &::before {
             transform: scale(1);
         }
-        
+
         ${Mask} {
             transform: skewX(12deg) translateX(5px);
             color: ${theme.colors.font};
@@ -67,7 +71,6 @@ const MenuItem = styled.li`
 
 
 // Mobile Menu
-
 const MobileMenu = styled.nav`
 `
 
@@ -79,21 +82,28 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
     bottom: 0;
     z-index: 99999;
     background-color: rgba(31, 31, 32, 0.9);
-    display: none;
-
-    ${props => props.isOpen && css<{ isOpen: boolean }>`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    `}
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: 1s ease-in-out;
+   
     ul {
         display: flex;
-        gap: 30px;
+        gap: 10px;
         justify-content: center;
         flex-direction: column;
         align-items: center;
     }
+
+    ${props => props.isOpen && css<{ isOpen: boolean }>`
+        transform: translateY(0);
+        
+        & ul {
+            gap: 40px;
+            transition: 1s ease-in-out;
+        }
+    `}
 `
 
 const BurgerButton = styled.button<{ isOpen: boolean }>`
@@ -160,7 +170,7 @@ const DesktopMenu = styled.nav`
 
 
 export const S = {
-    Link,
+    NavLink,
     Mask,
     MenuItem,
     MobileMenu,
