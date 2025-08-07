@@ -12,7 +12,7 @@ const items = [
         href: "skills"
     },
     {
-        title: "Works",
+        title: "Projects",
         href: "works"
     },
     {
