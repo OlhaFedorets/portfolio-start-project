@@ -6,9 +6,9 @@ const Skills = styled.section`
 `
 
 const Skill = styled.div`
-    width: 330px;
+    width: 200px;
     flex-grow: 1;
-    padding: 42px 20px 52px;
+    padding: 30px 20px 40px;
     
     @media ${theme.media.mobile} {
         padding: 62px 0 40px;
@@ -34,13 +34,9 @@ const IconWrapper = styled.div`
 `
 
 const SkillTitle = styled.h3`
-    margin: 70px 0 15px;    
+    margin: 50px 0 15px;    
     text-transform: uppercase;
-
-`
-
-const SkillText = styled.p`
-    text-align: center;    
+    text-align: center;
 `
 
 export const S = {
@@ -48,5 +44,4 @@ export const S = {
     Skill,
     IconWrapper,
     SkillTitle,
-    SkillText
 }
