@@ -35,7 +35,7 @@ const ImageWrapper = styled.div`
     position: relative;
 
     ${Button} {
-        opacity: 0;
+        opacity: 1;
         position: absolute;
         left: 50%;
         top: 50%;
