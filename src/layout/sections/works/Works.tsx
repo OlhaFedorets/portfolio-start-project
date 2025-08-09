@@ -3,8 +3,8 @@ import {SectionTitle} from "../../../components/SectionTitle";
 import {TabMenu, TabsStatusType} from "./tabMenu/TabMenu";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Work} from "./work/Work";
-import socialImg from "../../../assets/images/proj1.jpg";
-import timerImg from "../../../assets/images/proj2.jpg";
+import todoImg from "../../../assets/images/proj1.jpg";
+import resumeImg from "../../../assets/images/proj2.jpg";
 import {Container} from "../../../components/Container";
 import {S} from './Works_Styles'
 import {AnimatePresence, motion} from "framer-motion"
@@ -32,16 +32,15 @@ const tabsItems: Array<{ status: TabsStatusType, title: string }> = [
 
 const worksData = [
     {
-        title: "Social Network",
-        src: socialImg,
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, " +
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        title: "Todo List",
+        src: todoImg,
+        text: "The \"Todo List\" project provides a convenient interface for creating, editing, deleting, and displaying tasks and to-do lists. Users can easily add new tasks, set their completion status. " ,
         type: "spa",
         id: 1
     },
     {
-        title: "Timer",
-        src: timerImg,
+        title: "Resume",
+        src: resumeImg,
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. " +
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim",
         type: "react",
@@ -73,7 +72,7 @@ export const Works: React.FC = () => {
     return (
         <S.Works id={"works"}>
             <Container>
-                <SectionTitle>My work</SectionTitle>
+                <SectionTitle>Projects</SectionTitle>
                 <TabMenu tabsItems={tabsItems}
                          changeFilterStatus={changeFilterStatus}
                          currentFilterStatus={currentFilterStatus}/>
